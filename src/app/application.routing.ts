@@ -1,7 +1,5 @@
 import { RouterModule, Routes } from '@angular/router';
 
-
-
 const ApplicationRoutes: Routes = [
 	{
 		path: '',
@@ -28,7 +26,5 @@ const ApplicationRoutes: Routes = [
 		loadChildren: () => import('./pages/error-page/error-page.module').then(m => m.ErrorPageModule)
 	}
 ];
-
-
 
 export const ApplicationRouter = RouterModule.forRoot(ApplicationRoutes, { scrollPositionRestoration: 'top' });
