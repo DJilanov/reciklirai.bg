@@ -1,0 +1,36 @@
+<ng-container [ngSwitch]="statusCode">
+	<main *ngSwitchCase="404" class="Page-Not-Found">
+
+		<img src="./assets/images/ErrorPageComponent/404.svg" alt="Error Loading Icon" draggable="false">
+
+		<h3 class="Page-Not-Found__Title">
+			Грешка <span class="Page-Not-Found__Title__Status-Code">404</span> СТРАНИЦАТА НЕ Е НАМЕРЕНА !!!
+		</h3>
+
+		<h4 class="Server-Error__Description">
+			Страницата или линка, който се опитвате да отворите не бе намерен
+		</h4>
+
+		<button (click)="goBack()" type="button" class="btn btn-dark">Връщане на обратно</button>
+
+	</main>
+
+
+
+	<main *ngSwitchCase="500" class="Server-Error">
+
+		<img src="./assets/images/ErrorPageComponent/500.svg" alt="Error Loading Icon" draggable="false">
+
+		<h3 class="Server-Error__Title">
+			Грешка <span class="Server-Error__Title__Status-Code">500</span> ПРОБЛЕМ СЪС СЪРВЪРА !!!
+		</h3>
+
+		<h4 class="Server-Error__Description">
+			Изпитваме технически проблеми
+		</h4>
+
+		<button (click)="goBack()" type="button" class="btn btn-dark">Връщане на обратно</button>
+
+	</main>
+
+</ng-container>
