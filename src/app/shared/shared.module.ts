@@ -5,20 +5,26 @@ import { RouterModule } from '@angular/router';
 
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { GrassComponent } from './grass/grass.component';
+import { MaterialModule } from '../material-module';
 
 @NgModule({
 	imports: [
 		CommonModule,
 		RouterModule,
-		TranslateModule
+		TranslateModule,
+		MaterialModule
 	],
 	declarations: [
 		HeaderComponent,
-		FooterComponent
+		FooterComponent,
+		GrassComponent
 	],
 	exports: [
 		HeaderComponent,
-		FooterComponent
+		FooterComponent,
+		MaterialModule,
+		GrassComponent
 	]
 })
 

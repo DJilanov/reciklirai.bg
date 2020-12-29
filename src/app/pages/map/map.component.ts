@@ -1,5 +1,7 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 
+import { Loader } from "@googlemaps/js-api-loader"
+
 declare var google;
 
 @Component({
@@ -33,17 +35,16 @@ export class MapComponent implements AfterViewInit {
 
 	// COMPONENT METHODS
 	mapInitializer() {
-		if(!google) {
-			return;
-		}
-		this.coordinates = new google.maps.LatLng(this.latitude, this.longitude);
-		this.mapOptions.center = this.coordinates;
-		this.map = new google.maps.Map(this.googleMap.nativeElement, this.mapOptions);
-		this.marker = new google.maps.Marker({
-			position: this.coordinates,
-			clickable: true,
-			map: this.map,
+		const loader = new Loader({
+			apiKey: "AIzaSyDJ7JbwKivO6_50DDkipCoxkgtcURyelr8",
+			version: "weekly",
+		  });
+		  
+		  loader.load().then(() => {
+			const map = new google.maps.Map(this.googleMap.nativeElement as HTMLElement, {
+			  center: { lat: this.latitude, lng: this.longitude },
+			  zoom: this.mapOptions.zoom,
+			});
 		});
-		this.marker.setMap(this.map);
 	}
 }

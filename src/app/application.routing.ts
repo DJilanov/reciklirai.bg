@@ -9,10 +9,10 @@ const ApplicationRoutes: Routes = [
 		path: 'map',
 		loadChildren: () => import('./pages/map/map.module').then(m => m.MapModule)
 	},
-	{
-		path: 'zero-waste',
-		loadChildren: () => import('./pages/zero-waste/zero-waste.module').then(m => m.ZeroWasteModule)
-	},
+	// {
+	// 	path: 'zero-waste',
+	// 	loadChildren: () => import('./pages/zero-waste/zero-waste.module').then(m => m.ZeroWasteModule)
+	// },
 	{
 		path: 'questions',
 		loadChildren: () => import('./pages/questions/questions.module').then(m => m.QuestionsModule)

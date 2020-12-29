@@ -1,0 +1,36 @@
+<div *ngIf="full" class="full-container">
+  <div class="cloudcontain1">
+    <div class="cloud1"></div>
+    <div class="cloud2"></div>
+    <div class="cloud3"></div>
+  </div>
+  
+  <div class="cloudcontain2">
+    <div class="cloud1"></div>
+    <div class="cloud2"></div>
+    <div class="cloud3"></div>
+  </div>
+  
+  <div class="cloudcontain3">
+    <div class="cloud1"></div>
+    <div class="cloud2"></div>
+    <div class="cloud3"></div>
+  </div>
+  
+  <div class="cloudcontain4">
+    <div class="cloud1"></div>
+    <div class="cloud2"></div>
+    <div class="cloud3"></div>
+  </div>
+
+  <div class="sand"></div>
+  <div class="grass-container">
+    <div *ngFor="let blade of _blades; let i = index" [class]="'blade'+(i+1)+ ' back ' + size" [style.left.px]="i*30 + 50" [style.top.px]="top"></div>
+    <div *ngFor="let blade of _blades; let i = index" [class]="'blade'+(i+1)+ ' ' + size" [style.left.px]="i*30 + 35" [style.top.px]="top"></div>
+  </div>
+
+</div>
+<div *ngIf="!full">
+    <div *ngFor="let blade of _blades; let i = index" [class]="'blade'+(i+1)+ ' back ' + size" [style.left.px]="i*10 + 5" [style.top.px]="top"></div>
+    <div *ngFor="let blade of _blades; let i = index" [class]="'blade'+(i+1)+ ' ' + size" [style.left.px]="i*10" [style.top.px]="top"></div>
+</div>

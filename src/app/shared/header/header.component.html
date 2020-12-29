@@ -1,1 +1,35 @@
-HEADER
+<mat-toolbar class="big">
+	<span class="spacer"></span>
+	<span class="spacer"></span>
+	<div class="link-container">
+		<div class="link" [routerLink]="['/']">Кръгова икономика за начинаещи</div>
+		<div class="grass-container">
+			<app-grass [blades]="31" [size]="'tiny'" top="20"></app-grass>
+		</div>
+	</div>
+	<span class="spacer"></span>
+	<div class="link-container">
+		<div class="link" [routerLink]="['/map']">Карта</div>
+		<div class="grass-container">
+			<app-grass [blades]="5" [size]="'tiny'" top="20"></app-grass>
+		</div>
+	</div>
+	<span class="spacer"></span>
+	<img src="./assets/logo3.png" alt="Error Loading Icon" draggable="false">
+	<span class="spacer"></span>
+	<div class="link-container">
+		<div class="link" [routerLink]="['/questions']">Въпроси и отговори</div>
+		<div class="grass-container">
+			<app-grass [blades]="18" [size]="'tiny'" top="20"></app-grass>
+		</div>
+	</div>
+	<span class="spacer"></span>
+	<div class="link-container">
+		<div class="link" [routerLink]="['/for-us']">За нас</div>
+		<div class="grass-container">
+			<app-grass [blades]="6" [size]="'tiny'" top="20"></app-grass>
+		</div>
+	</div>
+	<span class="spacer"></span>
+	<span class="spacer"></span>
+</mat-toolbar>
