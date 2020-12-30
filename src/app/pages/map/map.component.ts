@@ -36,7 +36,7 @@ export class MapComponent implements AfterViewInit {
 	// COMPONENT METHODS
 	mapInitializer() {
 		const loader = new Loader({
-			apiKey: "AIzaSyDJ7JbwKivO6_50DDkipCoxkgtcURyelr8",
+			apiKey: "AIzaSyAyKG7uNPA9WC33YXov96Q4clFkiftc2fk",
 			version: "weekly",
 		  });
 		  
@@ -44,6 +44,11 @@ export class MapComponent implements AfterViewInit {
 			const map = new google.maps.Map(this.googleMap.nativeElement as HTMLElement, {
 			  center: { lat: this.latitude, lng: this.longitude },
 			  zoom: this.mapOptions.zoom,
+			});
+			new google.maps.Marker({
+				position: { lat: this.latitude, lng: this.longitude },
+				map,
+				title: "Hello World!",
 			});
 		});
 	}
