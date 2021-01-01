@@ -503,13 +503,27 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
               },
               zoom: _this4.mapOptions.zoom
             });
-            new google.maps.Marker({
+            var marker = new google.maps.Marker({
               position: {
                 lat: _this4.latitude,
                 lng: _this4.longitude
               },
               map: map,
-              title: "Hello World!"
+              title: "Hello World!",
+              icon: {
+                url: '/assets/logo3.png',
+                scaledSize: new google.maps.Size(150, 100),
+                origin: new google.maps.Point(0, 0),
+                anchor: new google.maps.Point(0, 0) // anchor
+
+              }
+            });
+            marker.addListener("click", function () {
+              infowindow.open(map, marker);
+            });
+            var contentString = '<div id="content">' + '<div id="siteNotice">' + "</div>" + '<h1 id="firstHeading" class="firstHeading">Zero Waste Office</h1>' + '<div id="bodyContent">' + "<p><b></b>, MORE INFO WILL BE ADDED" + "</div>" + "</div>";
+            var infowindow = new google.maps.InfoWindow({
+              content: contentString
             });
           });
         }
