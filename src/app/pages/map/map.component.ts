@@ -45,10 +45,32 @@ export class MapComponent implements AfterViewInit {
 			  center: { lat: this.latitude, lng: this.longitude },
 			  zoom: this.mapOptions.zoom,
 			});
-			new google.maps.Marker({
+			const marker = new google.maps.Marker({
 				position: { lat: this.latitude, lng: this.longitude },
 				map,
 				title: "Hello World!",
+				icon: {
+					url: '/assets/logo3.png',
+					scaledSize: new google.maps.Size(150, 100), // scaled size
+					origin: new google.maps.Point(0,0), // origin
+					anchor: new google.maps.Point(0, 0) // anchor
+				}
+			});
+			marker.addListener("click", () => {
+				infowindow.open(map, marker);
+			});
+			const contentString =
+			'<div id="content">' +
+			'<div id="siteNotice">' +
+			"</div>" +
+			'<h1 id="firstHeading" class="firstHeading">Zero Waste Office</h1>' +
+			'<div id="bodyContent">' +
+			"<p><b></b>, MORE INFO WILL BE ADDED" +
+			"</div>" +
+			"</div>";
+
+			const infowindow = new google.maps.InfoWindow({
+			content: contentString,
 			});
 		});
 	}
